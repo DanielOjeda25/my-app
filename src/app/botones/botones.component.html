@@ -1,9 +1,16 @@
 <p>botones works!</p>
-
-<div class="mx-auto w-full flex justify-center items-center">
-  <button class="bg-red-500 py-2 px-4 shadow-lg mx-2 rounded-md hover:bg-red-700">Color Rojo</button>
-  <button class="bg-green-500 py-2 px-4 shadow-lg mx-2 rounded-md hover:bg-green-700">Color Verde</button>
-  <button class="bg-blue-500 py-2 px-4 shadow-lg mx-2 rounded-md hover:bg-blue-700">Color Azul</button>
+<div class="h-screen mx-auto w-full flex justify-center items-center flex-col">
+  <button
+  [disabled]="false"
+  (click) = "text_color = 'text-red-500' "
+  class="mb-2 bg-red-500 py-2 px-4 shadow-lg mx-2 rounded-md hover:bg-red-700">Color Rojo</button>
+  <button
+  [disabled]="false"
+  (click) = "text_color = 'text-green-500' "
+  class="my-4 bg-green-500 py-2 px-4 shadow-lg mx-2 rounded-md hover:bg-green-700">Color Verde </button>
+  <button
+  [disabled]="false"
+  (click) = "text_color = 'text-indigo-500' "
+  class="bg-blue-500 py-2 px-4 shadow-lg mx-2 rounded-md hover:bg-blue-700 text-white">Color Azul</button>
+  <p [class]="text_color">texto que va a cambiar de color</p>
 </div>
-
-<p>texto que va a cambiar de color</p>

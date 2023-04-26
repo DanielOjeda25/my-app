@@ -8,11 +8,11 @@ import { Component } from '@angular/core';
 export class ContadorComponent {
 
   numero: number = 1;
- 
-  decrement(){
+   decrement() {
     this.numero--;
   }
-  increment(){
+  increment() {
     this.numero++;
   }
+  
 }
