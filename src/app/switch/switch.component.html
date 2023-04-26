@@ -1,0 +1,13 @@
+<p>switch works!</p>
+<div>
+  <input type="text" #number>
+  <button (click)="day = number.value" class="w-20 bg-green-400 mx-5 my-3 rounded-md">Mostrar dia</button>
+  <p [ngSwitch]="day" *ngIf="day">
+    <span *ngSwitchCase="'1'">Lunes</span>
+    <span *ngSwitchCase="'2'">Martes</span>
+    <span *ngSwitchCase="'3'">Miercoles</span>
+    <span *ngSwitchCase="'4'">Jueves</span>
+    <span *ngSwitchCase="'5'">Viernes</span>
+    <span *ngSwitchDefault>Ese valor no existe</span>
+  </p>
+</div>

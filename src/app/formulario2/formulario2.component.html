@@ -1,0 +1,25 @@
+<p class="text-center">formulario2 works!</p>
+
+<div class="p-4">
+  <form (ngSubmit)="procesar()" #formContact="ngForm">
+    <div class="flex flex-col gap-4">
+      <div class="w-full">
+        <label for="name" class="block font-medium mb-2">Nombre</label>
+        <input type="text" name="name" placeholder="Ingrese su nombre"
+          class="border-gray-300 border rounded-md p-2 w-full" [(ngModel)]="persona.nombre" required #name="ngModel">
+        <div class="text-red-500 mx-6 my-2" [hidden]="name.valid || name.pristine">
+          <p class="bg-black font-bold my-2 rounded-md">El nombre es obligatorio</p>
+        </div>
+      </div>
+      <div>
+        <label for="edad" class="block font-medium mb-2">Edad</label>
+        <input type="number" name="edad" placeholder="Ingrese su edad"
+          class="border-gray-300 border rounded-md p-2 w-full" [(ngModel)]="persona.edad" required #edad="ngModel">
+        <div class="text-red-700 my-2" [hidden]="edad.valid || edad.pristine">
+          <p>El nombre es obligatorio</p>
+        </div>
+      </div>
+      <button type="submit" class="border-gray-300 border rounded-md p-2 w-full" [disabled]="formContact.invalid">enviar</button>
+    </div>
+  </form>
+</div>

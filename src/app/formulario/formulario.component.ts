@@ -7,7 +7,10 @@ import { Component } from '@angular/core';
 })
 export class FormularioComponent {
 
-  showAlert(name: string): void{
+  showText: boolean = false;
+
+  showAlert(name: string): void {
     alert(name);
+    this.showText = true;
   }
 }

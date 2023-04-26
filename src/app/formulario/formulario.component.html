@@ -1,5 +1,17 @@
-<p>formulario works!</p>
+<div class="flex flex-col mt-5">
+  <p>formulario works!</p>
 <input type="text" placeholder="Ingresa tu nombre" #name>
 <button class="mt-2 p-3 bg-indigo-800 text-white shadow-lg" (click)="showAlert(name.value)" >
 Mostrar en consola
 </button>
+<div class="mt-4" *ngIf="showText; else mensaje">
+  <p class="font-bold text-center bg-slate-400 mx-2 my-2 rounded-md">se ha enviado un mensaje</p>
+  <button class="bg-red-300 w-10 mx-2 my-2 rounded-full" (click)="showText = false">x</button>
+</div>
+
+<ng-template #mensaje>
+  <div class="text-red-500 font-bold mx-4">
+    Mensaje prueba
+  </div>
+</ng-template>
+</div>
