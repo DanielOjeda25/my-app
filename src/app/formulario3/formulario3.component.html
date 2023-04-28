@@ -2,30 +2,30 @@
 
 <div class="card">
   <div class="card-body">
-    <form action="">
+    <form action="" [formGroup]="formUser" (ngSubmit)="procesar()">
       <div class="mb-2">
-        <label for=""  class="form-label" >Nombre</label>
-        <input type="text" class="form-control" placeholder="ingrese su nombre" [formControl]="name">
+        <label for="" class="form-label">Nombre</label>
+        <input type="text" class="form-control" placeholder="ingrese su nombre" formControlName="name">
 
-        <div class="alert alert-danger" [hidden]="name.valid || name.pristine">Nombre Obligatorio</div>
+        <div class="alert alert-danger" [hidden]="nameMethod.valid || nameMethod.pristine">Nombre
+          Obligatorio</div>
       </div>
 
       <div class="mb-2">
-        <label for=""  class="form-label" >Email</label>
-        <input type="email" class="form-control" placeholder="ingrese su email" [formControl]="email">
-        <div class="alert alert-danger" [hidden]="email.valid || email.pristine">
-          <span *ngIf="email.errors?.['required']">
+        <label for="" class="form-label">Email</label>
+        <input type="email" class="form-control" placeholder="ingrese su email" formControlName="email">
+        <div class="alert alert-danger" [hidden]="emailMethod.valid || emailMethod.pristine">
+          <span *ngIf="emailMethod.errors?.['required']">
             el email debe ser obligatorio
           </span>
-          <span *ngIf="email.errors?.['email']">
-            el email debe ser valido 
+          <span *ngIf="emailMethod.errors?.['email']">
+            el email debe ser valido
           </span>
         </div>
 
       </div>
-      <button class="btn btn-primary">enviar</button>
+      <button class="btn btn-primary" [disabled]="formUser.invalid">enviar</button>
     </form>
 
   </div>
 </div>
-
